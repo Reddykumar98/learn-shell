@@ -1,22 +1,22 @@
 #!/bin/bash
-user_id=(id -u)
+user_id=$(id -u)
 if [ $user_id -ne 0];then
    echo "Please run this script with sudo access"
-   exit1
+   exit 1
 fi
 echo "proceeding"
-dnf install nginix -y
+dnf install nginx -y
 if [ $? -ne 0 ];then
    echo "Nginx installantion is failed"
-   exit1
+   exit 1
 else
    echo "Nginx installation is pass"
 fi
 dnf install mysql -y
 if [ $? -ne 0 ];then
    echo "Mysql installation is failed"
-   exit1
+   exit 1
 else
    echo "Mysql installation is succeess"
 fi
-echo "done"
+   echo "done"
